@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Plurales con C</title>
+  <link rel="shortcut icon" type="image/x-icon" href="resa.ico"/>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    h1, .tom, .contenedor, .button-container {
+      text-align: center;
+    }
+
+    .pri {
+      background-color: #e51cce2d;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .question-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .options label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    button, .next-button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover, .next-button:hover {
+      background-color: #45a049;
+    }
+
+    .next-button {
+      font-size: 16px;
+      border-radius: 6px;
+    }
+
+    #reiniciar-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="pri">
+  <h1>Simulador de Preguntas: Uso de la C en los Plurales</h1>
+</div>
+
+<div class="tom">
+  <p><strong>Preguntas sobre el uso correcto de la letra "C" en los plurales ✍️</strong></p>
+</div>
+
+<form id="quizForm">
+  <div class="question-container">
+    <p><strong>41. ¿Cuál es el plural correcto de "pez"?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q41" value="a"> Pezes</label>
+      <label><input type="radio" name="q41" value="b"> Peces</label>
+      <label><input type="radio" name="q41" value="c"> Pescis</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>42. ¿Cuál es el plural de "luz"?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q42" value="a"> Luces</label>
+      <label><input type="radio" name="q42" value="b"> Luzes</label>
+      <label><input type="radio" name="q42" value="c"> Luzces</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>43. ¿Qué palabra está escrita correctamente en plural?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q43" value="a"> Narizes</label>
+      <label><input type="radio" name="q43" value="b"> Narices</label>
+      <label><input type="radio" name="q43" value="c"> Naricces</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>44. ¿Cuál es el plural correcto de "cruz"?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q44" value="a"> Cruzes</label>
+      <label><input type="radio" name="q44" value="b"> Cruces</label>
+      <label><input type="radio" name="q44" value="c"> Crucis</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>45. Elige la opción que contiene un plural correcto:</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q45" value="a"> Vozes</label>
+      <label><input type="radio" name="q45" value="b"> Voces</label>
+      <label><input type="radio" name="q45" value="c"> Vozces</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>46. ¿Qué regla se aplica al hacer plural una palabra que termina en "z"?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q46" value="a"> Se agrega “z”</label>
+      <label><input type="radio" name="q46" value="b"> Se cambia la “z” por “c” y se agrega “es”</label>
+      <label><input type="radio" name="q46" value="c"> Solo se agrega “es”</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>47. ¿Qué opción contiene solo plurales correctos?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q47" value="a"> Peces, luces, voces</label>
+      <label><input type="radio" name="q47" value="b"> Pezes, luces, vozces</label>
+      <label><input type="radio" name="q47" value="c"> Peces, luzes, voces</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>48. ¿Qué palabra cambia la “z” por “c” al hacerla plural?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q48" value="a"> Camión</label>
+      <label><input type="radio" name="q48" value="b"> Lapiz</label>
+      <label><input type="radio" name="q48" value="c"> Nariz</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>49. ¿Cómo se escribe el plural de “actriz”?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q49" value="a"> Actrizes</label>
+      <label><input type="radio" name="q49" value="b"> Actrices</label>
+      <label><input type="radio" name="q49" value="c"> Actricis</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>50. ¿Qué opción muestra un error en el uso de la “C”?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q50" value="a"> Peces</label>
+      <label><input type="radio" name="q50" value="b"> Luces</label>
+      <label><input type="radio" name="q50" value="c"> Lapices</label>
+    </div>
+  </div>
+  </div>
+
+  <!-- Agrega aquí el resto de tus preguntas 42 a 50 como ya las tienes -->
+  <!-- OMITIDAS POR BREVEDAD -->
+
+  <div class="contenedor">
+    <button type="button" onclick="calcularResultado()">Enviar respuestas</button>
+    <button type="button" onclick="mostrarResultadosFinales()">Generar respuesta final</button>
+  </div>
+</form>
+
+<div id="reiniciar-container" class="button-container" style="display: none;">
+  <button onclick="reiniciarIntento()">🔄 Reiniciar intento</button>
+</div>
+
+<div class="button-container">
+  <a href="index.html" class="next-button">Regresar</a>
+</div>
+
+<script>
+  function calcularResultado() {
+    const respuestasCorrectas = {
+      q41: "b", q42: "a", q43: "b", q44: "b", q45: "b",
+      q46: "b", q47: "a", q48: "b", q49: "b", q50: "c"
+    };
+
+    let puntos = 0;
+
+    for (let pregunta in respuestasCorrectas) {
+      const opciones = document.getElementsByName(pregunta);
+      for (let i = 0; i < opciones.length; i++) {
+        if (opciones[i].checked && opciones[i].value === respuestasCorrectas[pregunta]) {
+          puntos++;
+        }
+      }
+    }
+
+    localStorage.setItem('resultadoPag5', puntos);
+    localStorage.setItem('respuestasEnviadasPag5', 'true');
+    alert("Tus respuestas han sido enviadas ✅");
+    desactivarOpciones();
+    document.getElementById("reiniciar-container").style.display = "block";
+  }
+
+  function desactivarOpciones() {
+    document.querySelectorAll('input[type="radio"]').forEach(input => input.disabled = true);
+    const boton = document.querySelector("button[onclick='calcularResultado()']");
+    if (boton) {
+      boton.disabled = true;
+      boton.style.backgroundColor = "#ccc";
+      boton.style.cursor = "not-allowed";
+    }
+  }
+
+  function mostrarResultadosFinales() {
+    const nombre = localStorage.getItem("nombreEstudiante") || "Estudiante";
+    const p1 = parseInt(localStorage.getItem("resultadoPag1")) || 0;
+    const p2 = parseInt(localStorage.getItem("resultadoPag2")) || 0;
+    const p3 = parseInt(localStorage.getItem("resultadoPag3")) || 0;
+    const p4 = parseInt(localStorage.getItem("resultadoPag4")) || 0;
+    const p5 = parseInt(localStorage.getItem("resultadoPag5")) || 0;
+
+    const total = p1 + p2 + p3 + p4 + p5;
+    const porcentaje = (total / 50) * 100;
+
+    let mensajeFinal = "";
+
+    if (porcentaje >= 90) {
+      mensajeFinal = "🏅 ¡Excelente trabajo!";
+    } else if (porcentaje >= 70) {
+      mensajeFinal = "😊 ¡Muy bien hecho!";
+    } else if (porcentaje >= 50) {
+      mensajeFinal = "📘 ¡Puedes mejorar, sigue practicando!";
+    } else {
+      mensajeFinal = "😅 No te desanimes, inténtalo otra vez.";
+    }
+
+    alert(`${nombre}, contestaste correctamente ${total} de 50 preguntas.\nTu porcentaje es: ${porcentaje.toFixed(2)}%.\n${mensajeFinal}`);
+  }
+
+  function reiniciarIntento() {
+    if (confirm("¿Estás seguro de que quieres reiniciar tus respuestas?")) {
+      localStorage.removeItem('resultadoPag5');
+      localStorage.removeItem('respuestasEnviadasPag5');
+      location.reload();
+    }
+  }
+
+  window.onload = () => {
+    // Temporizador
+    let tiempo = 120;
+    const timer = document.createElement("p");
+    timer.id = "temporizador";
+    timer.style.fontWeight = "bold";
+    timer.style.color = "red";
+    document.body.insertBefore(timer, document.getElementById("quizForm"));
+
+    const cuenta = setInterval(() => {
+      const min = Math.floor(tiempo / 60);
+      const seg = tiempo % 60;
+      timer.textContent = `Tiempo restante: ${min}:${seg < 10 ? '0' : ''}${seg}`;
+      tiempo--;
+
+      if (tiempo < 0) {
+        clearInterval(cuenta);
+        calcularResultado();
+        desactivarOpciones();
+      }
+    }, 1000);
+
+    if (localStorage.getItem('respuestasEnviadasPag5') === 'true') {
+      desactivarOpciones();
+      document.getElementById("reiniciar-container").style.display = "block";
+    }
+  };
+</script>
+
+</body>
+</html>

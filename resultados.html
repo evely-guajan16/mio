@@ -1,0 +1,58 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTAL DE VOTOS</title>
+    <link type="text/css" href="diseño.css" rel="stylesheet">
+</head>
+<script>
+  window.onload = function(respuestasCorrectas) {
+    const nombre = localStorage.getItem("nombreEstudiante") || "Estudiante";
+
+    // Recuperar puntajes de todas las páginas
+    const total1 = parseInt(localStorage.getItem("resultadoPag1")) || 0;
+    const total2 = parseInt(localStorage.getItem("resultadoPag2")) || 0;
+    const total3 = parseInt(localStorage.getItem("resultadoPag3")) || 0;
+    const total4 = parseInt(localStorage.getItem("resultadoPag4")) || 0;
+    const total5 = parseInt(localStorage.getItem("resultadoPag5")) || 0;
+
+    const totalFinal = total1 + total2 + total3 + total4 + total5;
+    const porcentaje = (totalFinal / 50) * 100;
+
+    // Mostrar resultados en el contenedor con ID "andrea-votos"
+    const contenedor = document.getElementById("andrea-votos");
+    contenedor.innerHTML = `
+      <p><strong>${nombre}</strong> ha contestado correctamente <strong>${totalFinal}</strong> de 50 preguntas.</p>
+      <p>Porcentaje de aciertos: <strong>${porcentaje.toFixed(2)}%</strong></p>
+    `;
+  };
+
+  </script>
+  
+<body>
+    <center>
+        <div class="tot">
+            <h1>ESTOS SON TUS RESULTADOS</h1>
+        </div>
+            <tr>
+                <td>
+                    <h1>ESTUDIANTE</h1>
+                    <img src="examen.jpeg" alt="Andrea Gonzales" class="luisa-imagen">
+                </td>
+                <td id="respuestasCorrectas">0</td>
+            </tr>
+        </table>
+
+    </center>
+
+    <a href="index.html">
+        <center>
+            <button>
+                REGRESAR A LA PÁGINA PRINCIPAL
+            </button>
+        </center>
+    </a>
+</body>
+
+</html>

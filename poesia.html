@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Poesía - 4to</title>
+  <link rel="shortcut icon" type="image/x-icon" href="resa.ico"/>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
+      background: #f5f7f5;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Gill Sans', Calibri, sans-serif;
+      text-align: center;
+    }
+
+    .pri {
+      background-color: #e159108a;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .contenedor {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .input-field {
+      padding: 12px;
+      width: 250px;
+      font-size: 16px;
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .question-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .options label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    .tom {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .next-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .next-button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      font-size: 1.2em;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="pri">
+  <h1>Simulador de Preguntas de Lengua y Literatura</h1>
+</div>
+
+
+
+<div class="tom">
+  <p>Preguntas sobre el tema: "La poesía y sus características" 📜</p>
+</div>
+
+<form id="quizForm">
+  <div class="question-container">
+    <p><strong>21. ¿Qué es una poesía?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q21" value="a">Una noticia importante</label>
+      <label><input type="radio" name="q21" value="b">Un texto que rima y expresa sentimientos</label>
+      <label><input type="radio" name="q21" value="c">Una receta de cocina</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>22. ¿Qué es una rima?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q22" value="a">Cuando los versos se parecen al final</label>
+      <label><input type="radio" name="q22" value="b">Cuando hay muchas letras</label>
+      <label><input type="radio" name="q22" value="c">Cuando escribimos en prosa</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>23. ¿Qué sentimientos se pueden expresar en una poesía?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q23" value="a">Alegría, tristeza o amor</label>
+      <label><input type="radio" name="q23" value="b">Solo miedo</label>
+      <label><input type="radio" name="q23" value="c">Ninguno</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>24. ¿Cómo se llama cada línea de una poesía?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q24" value="a">Párrafo</label>
+      <label><input type="radio" name="q24" value="b">Verso</label>
+      <label><input type="radio" name="q24" value="c">Título</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>25. ¿Qué es una estrofa?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q25" value="a">Una parte del poema formada por varios versos</label>
+      <label><input type="radio" name="q25" value="b">Una palabra difícil</label>
+      <label><input type="radio" name="q25" value="c">Un dibujo del poema</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>26. ¿Cuál de estos es un poema?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q26" value="a">“El sol brilla y me hace sonreír”</label>
+      <label><input type="radio" name="q26" value="b">“Instrucciones para armar una silla”</label>
+      <label><input type="radio" name="q26" value="c">“Mi tarea de matemáticas”</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>27. ¿Qué figura usa la poesía para comparar cosas?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q27" value="a">Metáfora</label>
+      <label><input type="radio" name="q27" value="b">Mapa</label>
+      <label><input type="radio" name="q27" value="c">Cuadro</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>28. ¿Quién escribe poemas?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q28" value="a">Poeta</label>
+      <label><input type="radio" name="q28" value="b">Cocinero</label>
+      <label><input type="radio" name="q28" value="c">Mecánico</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>29. ¿Cómo puede ser el lenguaje en la poesía?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q29" value="a">Creativo y bonito</label>
+      <label><input type="radio" name="q29" value="b">Difícil y aburrido</label>
+      <label><input type="radio" name="q29" value="c">Igual al de los cuentos</label>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <p><strong>30. ¿Qué hace especial a una poesía?</strong></p>
+    <div class="options">
+      <label><input type="radio" name="q30" value="a">Que rime y tenga sentimientos</label>
+      <label><input type="radio" name="q30" value="b">Que tenga dibujos</label>
+      <label><input type="radio" name="q30" value="c">Que tenga solo palabras largas</label>
+    </div>
+  </div>
+
+
+<div id="result"></div>
+<div class="contenedor">
+  <button type="button" onclick="calcularResultado()">Enviar respuestas</button>
+</div>
+<div class="button-container">
+  <a href="hiato.html" class="next-button">Siguiente</a>
+</div>
+<script>
+function calcularResultado() {
+  const respuestasCorrectas = {
+    q21: "b",
+    q22: "a",
+    q23: "a",
+    q24: "b",
+    q25: "a",
+    q26: "a",
+    q27: "a",
+    q28: "a",
+    q29: "a",
+    q30: "a"
+  };
+
+  let puntos = 0;
+
+  for (let pregunta in respuestasCorrectas) {
+    const opciones = document.getElementsByName(pregunta);
+    for (let i = 0; i < opciones.length; i++) {
+      if (opciones[i].checked && opciones[i].value === respuestasCorrectas[pregunta]) {
+        puntos++;
+      }
+    }
+  }
+
+  // Guardamos el puntaje en localStorage
+  localStorage.setItem('resultadoPag3', puntos);
+  localStorage.setItem('respuestasEnviadasPag3', 'true');
+  // Mostramos el alert
+  alert("Tus respuestas han sido enviadas ✅");
+  function desactivarOpciones() {
+  // Desactiva todos los inputs tipo radio
+  const inputs = document.querySelectorAll('input[type="radio"]');
+  inputs.forEach(input => {
+    input.disabled = true;
+  });
+
+  // Oculta o desactiva el botón de enviar
+  const boton = document.querySelector("button[onclick='calcularResultado()']");
+  if (boton) {
+    boton.disabled = true;
+    boton.style.backgroundColor = "#ccc";
+    boton.style.cursor = "not-allowed";
+  }
+}
+if (localStorage.getItem('respuestasEnviadasPag5') === 'true') {
+  desactivarOpciones();
+}
+
+}
+let tiempo = 120;
+  
+    window.onload = () => {
+  
+      const timer = document.createElement("p");
+      timer.id = "temporizador";
+      timer.style.fontWeight = "bold";
+      timer.style.color = "red";
+      document.body.insertBefore(timer, document.getElementById("quizForm"));
+  
+      const cuenta = setInterval(() => {
+        const min = Math.floor(tiempo / 60);
+        const seg = tiempo % 60;
+        timer.textContent = `Tiempo restante: ${min}:${seg < 10 ? '0' : ''}${seg}`;
+        tiempo--;
+  
+        if (tiempo < 0) {
+          clearInterval(cuenta);
+          calcularResultado();
+          document.querySelectorAll("input").forEach(e => e.disabled = true);
+          const boton = document.querySelector("button[onclick='calcularResultado()']");
+          if (boton) {
+            boton.disabled = true;
+            boton.style.backgroundColor = "#ccc";
+            boton.style.cursor = "not-allowed";
+          }
+        }
+      }, 1000);
+    };
+</script>
+</body>
+</html>
